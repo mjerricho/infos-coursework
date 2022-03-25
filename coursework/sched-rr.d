@@ -1,0 +1,20 @@
+/home/guest/os-coursework/infos/oot/sched-rr.o: \
+ /home/guest/os-coursework/infos/oot/sched-rr.cpp \
+ /home/guest/os-coursework/infos/include/infos/kernel/sched.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/subsystem.h \
+ /home/guest/os-coursework/infos/include/infos/define.h \
+ /home/guest/os-coursework/infos/include/infos/assert.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/sched-entity.h \
+ /home/guest/os-coursework/infos/include/infos/util/time.h \
+ /home/guest/os-coursework/infos/include/infos/util/ratio.h \
+ /home/guest/os-coursework/infos/include/infos/util/event.h \
+ /home/guest/os-coursework/infos/include/infos/util/wakequeue.h \
+ /home/guest/os-coursework/infos/include/infos/util/list.h \
+ /home/guest/os-coursework/infos/include/infos/util/support.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/log.h \
+ /home/guest/os-coursework/infos/include/infos/util/lock.h \
+ /home/guest/os-coursework/infos/include/arch/x86/irq.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/irq.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/thread.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/thread-context.h \
+ /home/guest/os-coursework/infos/include/arch/x86/context.h

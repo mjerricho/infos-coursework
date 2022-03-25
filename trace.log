@@ -1,0 +1,67 @@
+[32;1m   info: [37;0m-----------------------------------------------------------------
+[32;1m   info: [37;0mStarting InfOS!
+[32;1m   info: [37;0m-----------------------------------------------------------------
+[32;1m   info: [37;0mKernel command-line: /home/guest/os-coursework/infos/out/infos-kernel boot-device=ata0 init=/usr/init pgalloc.debug=1 pgalloc.algorithm=buddy objalloc.debug=0 sched.debug=0 sched.algorithm=cfs 
+[34;1m  debug: [37;0mx86: Initialising platform
+[34;1m  debug: [37;0mx86: GDTR = 0xffffffff8014b120, IDTR = 0xffffffff8014a110, TR = 0x28, RSP = 0xffffffff8014efb8
+[34;1m  debug: [37;0mx86: Initialising memory management
+[32;1m   info: [37;0mmm: PMB: 0000000000--000009f000 (636 kB) 
+[32;1m   info: [37;0mmm: PMB: 00000f0000--0000100000 (64 kB) (unusable)
+[32;1m   info: [37;0mmm: PMB: 0000100000--001ffe0000 (523136 kB) 
+[32;1m   info: [37;0mmm: PMB: 001ffe0000--0020000000 (128 kB) (unusable)
+[32;1m   info: [37;0mmm: PMB: 00fffc0000--0100000000 (256 kB) (unusable)
+[32;1m   info: [37;0mmm: Total physical memory: 1ffe0000 (511 MB)
+[32;1m   info: [37;0mmm: Last PFN: 1ffdf (1ffdf000)
+[34;1m  debug: [37;0mmm: Searching for 'buddy' algorithm...
+[37;1;42m notice: *** USING PAGE ALLOCATION ALGORITHM: buddy[37;0m
+[34;1m  debug: [37;0mmm: Allocating 131040 page descriptors (2047 kB)
+[32;1m   info: [37;0mmm: Page Allocator: total=131040, present=130943, free=130339 (509 MB)
+[32;1m   info: [37;0mmm: Initialising allocator algorithm 'buddy'
+[34;1m  debug: [37;0mmm: Buddy Allocator Initialising pd=0xffffffff80151000, nr=0x1ffe0
+[34;1m  debug: [37;0mmm: BUDDY STATE:
+[34;1m  debug: [37;0mmm: [0] 
+[34;1m  debug: [37;0mmm: [1] 
+[34;1m  debug: [37;0mmm: [2] 
+[34;1m  debug: [37;0mmm: [3] 
+[34;1m  debug: [37;0mmm: [4] 
+[34;1m  debug: [37;0mmm: [5] 
+[34;1m  debug: [37;0mmm: [6] 
+[34;1m  debug: [37;0mmm: [7] 
+[34;1m  debug: [37;0mmm: [8] 
+[34;1m  debug: [37;0mmm: [9] 
+[34;1m  debug: [37;0mmm: [10] 
+[34;1m  debug: [37;0mmm: [11] 
+[34;1m  debug: [37;0mmm: [12] 
+[34;1m  debug: [37;0mmm: [13] 
+[34;1m  debug: [37;0mmm: [14] 
+[34;1m  debug: [37;0mmm: [15] 
+[34;1m  debug: [37;0mmm: [16] 
+[34;1m  debug: [37;0mmm: BUDDY STATE:
+[34;1m  debug: [37;0mmm: [0] 
+[34;1m  debug: [37;0mmm: [1] 
+[34;1m  debug: [37;0mmm: [2] 
+[34;1m  debug: [37;0mmm: [3] 
+[34;1m  debug: [37;0mmm: [4] 
+[34;1m  debug: [37;0mmm: [5] 
+[34;1m  debug: [37;0mmm: [6] 
+[34;1m  debug: [37;0mmm: [7] 
+[34;1m  debug: [37;0mmm: [8] 
+[34;1m  debug: [37;0mmm: [9] 
+[34;1m  debug: [37;0mmm: [10] 
+[34;1m  debug: [37;0mmm: [11] 
+[34;1m  debug: [37;0mmm: [12] 
+[34;1m  debug: [37;0mmm: [13] 
+[34;1m  debug: [37;0mmm: [14] 
+[34;1m  debug: [37;0mmm: [15] 
+[34;1m  debug: [37;0mmm: [16] 0 
+[34;1m  debug: [37;0mmm: INIT: done initialising buddy algorithm
+[31;1m  fatal: [37;0m*****
+[31;1m  fatal: [37;0mASSERTION FAILURE: /home/guest/os-coursework/infos/oot/buddy.cpp:271
+[31;1m  fatal: [37;0mfalse && "NOT IMPLEMENTED"
+[31;1m  fatal: [37;0m*****
+[34;1m  debug: [37;0m  0: ffffffff8013e05c
+[34;1m  debug: [37;0m  1: ffffffff80115cdd
+[34;1m  debug: [37;0m  2: ffffffff8011397d
+[34;1m  debug: [37;0m  3: ffffffff80103e1c
+[34;1m  debug: [37;0m  4: ffffffff80102c36
+[34;1m  debug: [37;0m  5: 0

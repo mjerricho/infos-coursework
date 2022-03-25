@@ -1,0 +1,1 @@
+qemu-system-x86_64 -kernel /home/guest/os-coursework/infos/out/infos-kernel -m 512M -debugcon file:trace.log -serial null -nographic -hda /home/guest/os-coursework/infos-user/bin/rootfs.tar -append "boot-device=ata0 init=/usr/init pgalloc.debug=1 pgalloc.algorithm=buddy objalloc.debug=0 sched.debug=0 sched.algorithm=cfs "

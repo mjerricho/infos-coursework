@@ -1,0 +1,37 @@
+/home/guest/os-coursework/infos/oot/buddy.o: \
+ /home/guest/os-coursework/infos/oot/buddy.cpp \
+ /home/guest/os-coursework/infos/include/infos/mm/page-allocator.h \
+ /home/guest/os-coursework/infos/include/infos/mm/allocator.h \
+ /home/guest/os-coursework/infos/include/infos/define.h \
+ /home/guest/os-coursework/infos/include/infos/assert.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/log.h \
+ /home/guest/os-coursework/infos/include/infos/util/lock.h \
+ /home/guest/os-coursework/infos/include/arch/x86/irq.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/irq.h \
+ /home/guest/os-coursework/infos/include/infos/mm/mm.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/subsystem.h \
+ /home/guest/os-coursework/infos/include/infos/mm/object-allocator.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/kernel.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/om.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/object.h \
+ /home/guest/os-coursework/infos/include/infos/util/map.h \
+ /home/guest/os-coursework/infos/include/infos/util/list.h \
+ /home/guest/os-coursework/infos/include/infos/util/support.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/device-manager.h \
+ /home/guest/os-coursework/infos/include/infos/drivers/device.h \
+ /home/guest/os-coursework/infos/include/infos/util/string.h \
+ /home/guest/os-coursework/infos/include/infos/util/generator.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/module.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/sched.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/sched-entity.h \
+ /home/guest/os-coursework/infos/include/infos/util/time.h \
+ /home/guest/os-coursework/infos/include/infos/util/ratio.h \
+ /home/guest/os-coursework/infos/include/infos/util/event.h \
+ /home/guest/os-coursework/infos/include/infos/util/wakequeue.h \
+ /home/guest/os-coursework/infos/include/infos/kernel/syscall.h \
+ /home/guest/os-coursework/infos/include/infos/fs/vfs.h \
+ /home/guest/os-coursework/infos/include/infos/fs/vfs-node.h \
+ /home/guest/os-coursework/infos/include/infos/fs/fs-node.h \
+ /home/guest/os-coursework/infos/include/infos/util/cmdline.h \
+ /home/guest/os-coursework/infos/include/infos/util/math.h \
+ /home/guest/os-coursework/infos/include/infos/util/printf.h

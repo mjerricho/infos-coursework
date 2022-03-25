@@ -144,9 +144,25 @@ private:
 		
 		// Make sure the block_pointer is correctly aligned.
 		assert(is_correct_alignment_for_order(*block_pointer, source_order));
+
+		// Make sure that the source order > 0
+		mm_log.messagef(LogLevel::DEBUG, "Splitting block, pd=%p, source order=%l", block_pointer, source_order);
+		dump_state();
+		int target_order = source_order - 1;
+		PageDescriptor *left_block = *block_pointer;
+		PageDescriptor *right_block = buddy_of(*block_pointer, target_order);
+
+		// Make sure that left_block < right_block
+		assert(left_block < right_block);
 		
-		// TODO: Implement this function
-		return nullptr;		
+		// remove block and add new ones
+		remove_block(*block_pointer, source_order);
+		insert_block(left_block, target_order);
+		insert_block(right_block, target_order);
+
+		mm_log.messagef(LogLevel::DEBUG, "Finished splitting block, pd=%p", left_block);
+		dump_state();
+		return left_block;
 	}
 	
 	/**
@@ -163,9 +179,25 @@ private:
 		
 		// Make sure the area_pointer is correctly aligned.
 		assert(is_correct_alignment_for_order(*block_pointer, source_order));
+		
+		mm_log.messagef(LogLevel::DEBUG, "Merging block, pd=%p, source order=%l", block_pointer, source_order);
+		dump_state();
+		
+		int target_order = source_order + 1;
+		PageDescriptor *left_block = *block_pointer;
+		PageDescriptor *right_block = buddy_of(*block_pointer, source_order);
 
-		// TODO: Implement this function
-		return nullptr;		
+		// Make sure that left_block < right_block
+		assert(left_block < right_block);
+		
+		// remove block and add new ones
+		remove_block(left_block, source_order);
+		remove_block(right_block, source_order);
+		PageDescriptor **res = insert_block(left_block, target_order);
+
+		mm_log.messagef(LogLevel::DEBUG, "Finished merging block, pd=%p", left_block);
+		dump_state();
+		return res;
 	}
 	
 public:
@@ -185,9 +217,42 @@ public:
 	 * @return Returns a pointer to the first page descriptor for the newly allocated page range, or NULL if
 	 * allocation failed.
 	 */
-	PageDescriptor *alloc_pages(int order) override
+	PageDescriptor *alloc_pages(int target_order) override
 	{
-		not_implemented();
+	  mm_log.messagef(LogLevel::DEBUG, "Allocating pages, order=%l", target_order);
+	  dump_state();
+
+	  // Making sure that the order is within acceptable range
+	  assert(target_order > 0);
+	  assert(target_order <= MAX_ORDER);
+
+	  // start with creating the variables to store the current order and target order
+	  int current_order = target_order;
+
+	  // store the free block
+	  PageDescriptor *free_block = _free_areas[current_order];
+
+	  // while loop to split larger blocks if free_block is NULL
+	  while (!free_block || current_order > target_order) {
+	    // if there are no larger blocks to split
+	    if (current_order > MAX_ORDER || current_order <0) {
+	      mm_log.messagef(LogLevel::DEBUG, "alloc_pages: [OUT-OF-MEMORY] | No more larger block to split");
+	      return nullptr;
+	    }
+	    	    
+	    if (_free_areas[current_order]) {
+	      // split larger blocks
+	      mm_log.messagef(LogLevel::DEBUG, "alloc_pages: Splitting larger block at order %l.", current_order);
+	      free_block = split_block(&_free_areas[current_order], current_order);
+	      current_order--;
+	      mm_log.messagef(LogLevel::DEBUG, "alloc_pages: Block at order %l is split.", current_order);
+	    } else {
+	      // get to larger blocks
+	      current_order++;
+	    }	    
+	  }
+	  mm_log.messagef(LogLevel::DEBUG, "alloc_pages: Page allocated");
+	  return free_block;
 	}
 	
 	/**
@@ -201,7 +266,10 @@ public:
 		// for the order on which it is being freed, for example, it is
 		// illegal to free page 1 in order-1.
 		assert(is_correct_alignment_for_order(pgd, order));
-		
+		// TODO
+		// PageDescriptor *base = pgd;
+		// for (unsigned int i = 0; i < ((unsigned int)1 << (unsigned int)order); i++) {
+		// 	assert(base[i].type == PageDescriptorType::ALLOCATED);
 		not_implemented();
 	}
 	
@@ -212,6 +280,9 @@ public:
 	 */
 	bool reserve_page(PageDescriptor *pgd)
 	{
+	  //TODO
+	  // assert(pgd->type != PageDescriptorType::AVAILABLE);
+	  // return true;
 		not_implemented();
 	}
 	
@@ -222,14 +293,42 @@ public:
 	bool init(PageDescriptor *page_descriptors, uint64_t nr_page_descriptors) override
 	{
 		mm_log.messagef(LogLevel::DEBUG, "Buddy Allocator Initialising pd=%p, nr=0x%lx", page_descriptors, nr_page_descriptors);
+		dump_state();
+		uint64_t ppb = pages_per_block(MAX_ORDER - 1);
+		uint64_t num_blocks = nr_page_descriptors / ppb;
+		// inserting blocks
+		for (unsigned int i = 0; i < num_blocks; i++) {
+		  insert_block(page_descriptors + (ppb * i), (MAX_ORDER - 1));
+		}
+		dump_state();
 		
-		// TODO: Initialise the free area linked list for the maximum order
-		// to initialise the allocation algorithm.
-		
-		not_implemented();
-	}
+		// // TODO: Initialise the free area linked list for the maximum order
+		// // to initialise the allocation algorithm.
+		// auto order = MAX_ORDER - 1;
+		// uint64_t remaining_pages = nr_page_descriptors;
 
-	/**
+		// // Given any number of pages provided, we fill up as many blocks as possible
+		// // we start with the biggest block
+		// do {
+		//   auto block_size = pages_per_block(order);
+		//   auto surplus_pages = remaining_pages % block_size;
+		//   auto block_count = (remaining_pages - surplus_pages) / block_size;
+		//   auto last_block = page_descriptors + (block_count * block_size);
+		  
+		//   while (page_descriptors < last_block) {
+		//     insert_block(page_descriptors, order);
+		//     page_descriptors += block_size;
+		//     remaining_pages -= block_size;
+		//   }
+		  
+		//   order--;
+		// } while (remaining_pages > 0);
+		// dump_state();
+		mm_log.messagef(LogLevel::DEBUG, "INIT: done initialising buddy algorithm");
+		return true;
+	}
+  
+        /**
 	 * Returns the friendly name of the allocation algorithm, for debugging and selection purposes.
 	 */
 	const char* name() const override { return "buddy"; }
