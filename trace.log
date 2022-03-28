@@ -7,17 +7,18 @@
 [34;1m  debug: [37;0mx86: Initialising memory management
 [32;1m   info: [37;0mmm: PMB: 0000000000--000009f000 (636 kB) 
 [32;1m   info: [37;0mmm: PMB: 00000f0000--0000100000 (64 kB) (unusable)
-[32;1m   info: [37;0mmm: PMB: 0000100000--001ffe0000 (523136 kB) 
-[32;1m   info: [37;0mmm: PMB: 001ffe0000--0020000000 (128 kB) (unusable)
+[32;1m   info: [37;0mmm: PMB: 0000100000--00bffe0000 (3144576 kB) 
+[32;1m   info: [37;0mmm: PMB: 00bffe0000--00c0000000 (128 kB) (unusable)
 [32;1m   info: [37;0mmm: PMB: 00fffc0000--0100000000 (256 kB) (unusable)
-[32;1m   info: [37;0mmm: Total physical memory: 1ffe0000 (511 MB)
-[32;1m   info: [37;0mmm: Last PFN: 1ffdf (1ffdf000)
+[32;1m   info: [37;0mmm: PMB: 0100000000--013a000000 (950272 kB) 
+[32;1m   info: [37;0mmm: Total physical memory: 13a000000 (5024 MB)
+[32;1m   info: [37;0mmm: Last PFN: 139fff (139fff000)
 [34;1m  debug: [37;0mmm: Searching for 'buddy' algorithm...
 [37;1;42m notice: *** USING PAGE ALLOCATION ALGORITHM: buddy[37;0m
-[34;1m  debug: [37;0mmm: Allocating 131040 page descriptors (2047 kB)
-[32;1m   info: [37;0mmm: Page Allocator: total=131040, present=130943, free=130339 (509 MB)
+[34;1m  debug: [37;0mmm: Allocating 1286144 page descriptors (20096 kB)
+[32;1m   info: [37;0mmm: Page Allocator: total=1286144, present=1023871, free=1018754 (3979 MB)
 [32;1m   info: [37;0mmm: Initialising allocator algorithm 'buddy'
-[34;1m  debug: [37;0mmm: Buddy Allocator Initialising pd=0xffffffff80151000, nr=0x1ffe0
+[34;1m  debug: [37;0mmm: Buddy Allocator Initialising pd=0xffffffff80151000, nr=0x13a000
 [34;1m  debug: [37;0mmm: BUDDY STATE:
 [34;1m  debug: [37;0mmm: [0] 
 [34;1m  debug: [37;0mmm: [1] 
@@ -54,7 +55,7 @@
 [34;1m  debug: [37;0mmm: [13] 
 [34;1m  debug: [37;0mmm: [14] 
 [34;1m  debug: [37;0mmm: [15] 
-[34;1m  debug: [37;0mmm: [16] 0 
+[34;1m  debug: [37;0mmm: [16] 0 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [37;1;42m notice: mm: PAGE ALLOCATOR SELF TEST - BEGIN[37;0m
 [37;1;42m notice: mm: ------------------------[37;0m
 [32;1m   info: [37;0mmm: * INITIAL STATE
@@ -75,7 +76,7 @@
 [34;1m  debug: [37;0mmm: [13] 
 [34;1m  debug: [37;0mmm: [14] 
 [34;1m  debug: [37;0mmm: [15] 
-[34;1m  debug: [37;0mmm: [16] 0 
+[34;1m  debug: [37;0mmm: [16] 0 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm: ------------------------
 [32;1m   info: [37;0mmm: (1) ALLOCATING ONE PAGE
 [32;1m   info: [37;0mmm: ALLOCATED PFN: 0x0
@@ -96,7 +97,7 @@
 [34;1m  debug: [37;0mmm: [13] 2000 
 [34;1m  debug: [37;0mmm: [14] 4000 
 [34;1m  debug: [37;0mmm: [15] 8000 
-[34;1m  debug: [37;0mmm: [16] 
+[34;1m  debug: [37;0mmm: [16] 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm: ------------------------
 [32;1m   info: [37;0mmm: (2) FREEING ONE PAGE
 [34;1m  debug: [37;0mmm: BUDDY STATE:
@@ -116,7 +117,7 @@
 [34;1m  debug: [37;0mmm: [13] 
 [34;1m  debug: [37;0mmm: [14] 
 [34;1m  debug: [37;0mmm: [15] 
-[34;1m  debug: [37;0mmm: [16] 0 
+[34;1m  debug: [37;0mmm: [16] 0 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm: ------------------------
 [32;1m   info: [37;0mmm: (3) ALLOCATING TWO CONTIGUOUS PAGES
 [32;1m   info: [37;0mmm: ALLOCATED PFN: 0x0
@@ -137,7 +138,7 @@
 [34;1m  debug: [37;0mmm: [13] 2000 
 [34;1m  debug: [37;0mmm: [14] 4000 
 [34;1m  debug: [37;0mmm: [15] 8000 
-[34;1m  debug: [37;0mmm: [16] 
+[34;1m  debug: [37;0mmm: [16] 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm: ------------------------
 [32;1m   info: [37;0mmm: (4) FREEING TWO CONTIGUOUS PAGES
 [34;1m  debug: [37;0mmm: BUDDY STATE:
@@ -157,7 +158,7 @@
 [34;1m  debug: [37;0mmm: [13] 
 [34;1m  debug: [37;0mmm: [14] 
 [34;1m  debug: [37;0mmm: [15] 
-[34;1m  debug: [37;0mmm: [16] 0 
+[34;1m  debug: [37;0mmm: [16] 0 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm: ------------------------
 [32;1m   info: [37;0mmm: (5) OVERLAPPING ALLOCATIONS
 [34;1m  debug: [37;0mmm: BUDDY STATE:
@@ -177,7 +178,7 @@
 [34;1m  debug: [37;0mmm: [13] 
 [34;1m  debug: [37;0mmm: [14] 
 [34;1m  debug: [37;0mmm: [15] 
-[34;1m  debug: [37;0mmm: [16] 0 
+[34;1m  debug: [37;0mmm: [16] 0 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm: ------------------------
 [32;1m   info: [37;0mmm: (6) MULTIPLE ALLOCATIONS, RANDOM ORDER FREE
 [32;1m   info: [37;0mmm: * AFTER ALLOCATION
@@ -198,7 +199,7 @@
 [34;1m  debug: [37;0mmm: [13] 2000 
 [34;1m  debug: [37;0mmm: [14] 4000 
 [34;1m  debug: [37;0mmm: [15] 8000 
-[34;1m  debug: [37;0mmm: [16] 
+[34;1m  debug: [37;0mmm: [16] 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm:   FREE 0x8
 [34;1m  debug: [37;0mmm: BUDDY STATE:
 [34;1m  debug: [37;0mmm: [0] 8 b 
@@ -217,7 +218,7 @@
 [34;1m  debug: [37;0mmm: [13] 2000 
 [34;1m  debug: [37;0mmm: [14] 4000 
 [34;1m  debug: [37;0mmm: [15] 8000 
-[34;1m  debug: [37;0mmm: [16] 
+[34;1m  debug: [37;0mmm: [16] 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm:   FREE 0x4
 [34;1m  debug: [37;0mmm: BUDDY STATE:
 [34;1m  debug: [37;0mmm: [0] 8 b 
@@ -236,7 +237,7 @@
 [34;1m  debug: [37;0mmm: [13] 2000 
 [34;1m  debug: [37;0mmm: [14] 4000 
 [34;1m  debug: [37;0mmm: [15] 8000 
-[34;1m  debug: [37;0mmm: [16] 
+[34;1m  debug: [37;0mmm: [16] 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm:   FREE 0x9
 [34;1m  debug: [37;0mmm: BUDDY STATE:
 [34;1m  debug: [37;0mmm: [0] b 
@@ -255,7 +256,7 @@
 [34;1m  debug: [37;0mmm: [13] 2000 
 [34;1m  debug: [37;0mmm: [14] 4000 
 [34;1m  debug: [37;0mmm: [15] 8000 
-[34;1m  debug: [37;0mmm: [16] 
+[34;1m  debug: [37;0mmm: [16] 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm:   FREE 0xa
 [34;1m  debug: [37;0mmm: BUDDY STATE:
 [34;1m  debug: [37;0mmm: [0] 
@@ -274,7 +275,7 @@
 [34;1m  debug: [37;0mmm: [13] 2000 
 [34;1m  debug: [37;0mmm: [14] 4000 
 [34;1m  debug: [37;0mmm: [15] 8000 
-[34;1m  debug: [37;0mmm: [16] 
+[34;1m  debug: [37;0mmm: [16] 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm:   FREE 0x2
 [34;1m  debug: [37;0mmm: BUDDY STATE:
 [34;1m  debug: [37;0mmm: [0] 2 
@@ -293,7 +294,7 @@
 [34;1m  debug: [37;0mmm: [13] 2000 
 [34;1m  debug: [37;0mmm: [14] 4000 
 [34;1m  debug: [37;0mmm: [15] 8000 
-[34;1m  debug: [37;0mmm: [16] 
+[34;1m  debug: [37;0mmm: [16] 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm:   FREE 0x1
 [34;1m  debug: [37;0mmm: BUDDY STATE:
 [34;1m  debug: [37;0mmm: [0] 1 2 
@@ -312,7 +313,7 @@
 [34;1m  debug: [37;0mmm: [13] 2000 
 [34;1m  debug: [37;0mmm: [14] 4000 
 [34;1m  debug: [37;0mmm: [15] 8000 
-[34;1m  debug: [37;0mmm: [16] 
+[34;1m  debug: [37;0mmm: [16] 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm:   FREE 0x0
 [34;1m  debug: [37;0mmm: BUDDY STATE:
 [34;1m  debug: [37;0mmm: [0] 2 
@@ -331,7 +332,7 @@
 [34;1m  debug: [37;0mmm: [13] 2000 
 [34;1m  debug: [37;0mmm: [14] 4000 
 [34;1m  debug: [37;0mmm: [15] 8000 
-[34;1m  debug: [37;0mmm: [16] 
+[34;1m  debug: [37;0mmm: [16] 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm:   FREE 0x3
 [32;1m   info: [37;0mmm: * AFTER RANDOM ORDER FREEING
 [34;1m  debug: [37;0mmm: BUDDY STATE:
@@ -351,7 +352,7 @@
 [34;1m  debug: [37;0mmm: [13] 
 [34;1m  debug: [37;0mmm: [14] 
 [34;1m  debug: [37;0mmm: [15] 
-[34;1m  debug: [37;0mmm: [16] 0 
+[34;1m  debug: [37;0mmm: [16] 0 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm: ------------------------
 [32;1m   info: [37;0mmm: (7) RESERVING PAGE 0x14e000 and 0x14f000
 [34;1m  debug: [37;0mmm: BUDDY STATE:
@@ -371,7 +372,7 @@
 [34;1m  debug: [37;0mmm: [13] 2000 
 [34;1m  debug: [37;0mmm: [14] 4000 
 [34;1m  debug: [37;0mmm: [15] 8000 
-[34;1m  debug: [37;0mmm: [16] 
+[34;1m  debug: [37;0mmm: [16] 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm: ------------------------
 [32;1m   info: [37;0mmm: (8) FREEING RESERVED PAGE 0x14f000
 [34;1m  debug: [37;0mmm: BUDDY STATE:
@@ -391,7 +392,7 @@
 [34;1m  debug: [37;0mmm: [13] 2000 
 [34;1m  debug: [37;0mmm: [14] 4000 
 [34;1m  debug: [37;0mmm: [15] 8000 
-[34;1m  debug: [37;0mmm: [16] 
+[34;1m  debug: [37;0mmm: [16] 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm: ------------------------
 [32;1m   info: [37;0mmm: (9) FREEING RESERVED PAGE 0x14e000
 [34;1m  debug: [37;0mmm: BUDDY STATE:
@@ -411,7 +412,7 @@
 [34;1m  debug: [37;0mmm: [13] 
 [34;1m  debug: [37;0mmm: [14] 
 [34;1m  debug: [37;0mmm: [15] 
-[34;1m  debug: [37;0mmm: [16] 0 
+[34;1m  debug: [37;0mmm: [16] 0 10000 20000 30000 40000 50000 60000 70000 80000 90000 a0000 b0000 c0000 d0000 e0000 f0000 100000 110000 120000 
 [32;1m   info: [37;0mmm: ------------------------
 [32;1m   info: [37;0mmm: PAGE ALLOCATOR SELF TEST - COMPLETE
 [34;1m  debug: [37;0mpgalloc: alloc: order=4, pgd=0xffffffff80151100 (10000)
@@ -421,9 +422,9 @@
 [34;1m  debug: [37;0mx86: Configuring platform with ACPI
 [34;1m  debug: [37;0macpi: finding ebda...
 [34;1m  debug: [37;0macpi: ebda=0xffffffff8009fc00, locating rsdp descriptor...
-[34;1m  debug: [37;0macpi: rsdp=0xffffffff800f5980
-[32;1m   info: [37;0macpi: acpi version=0 oemid=BOCHS rsdt=0x1ffe1905
-[34;1m  debug: [37;0macpi: parsing acpi tables rsdt=0xffff80001ffe1905
+[34;1m  debug: [37;0macpi: rsdp=0xffffffff800f5960
+[32;1m   info: [37;0macpi: acpi version=0 oemid=BOCHS rsdt=0xbffe1905
+[34;1m  debug: [37;0macpi: parsing acpi tables rsdt=0xffff8000bffe1905
 [32;1mwarning: [37;0macpi: unsupported acpi table: 50434146
 [34;1m  debug: [37;0macpi: madt: lca=fee00000, flags=1
 [34;1m  debug: [37;0macpi: madt: lapic: id=0, procid=0, flags=1
@@ -447,8 +448,8 @@
 [34;1m  debug: [37;0mdevmgr: registering device 'lapic-timer0'
 [34;1m  debug: [37;0mlapic-timer: Calibrating...
 [34;1m  debug: [37;0mlapic-timer: calibration ticks=11931
-[34;1m  debug: [37;0mlapic-timer: ticks-per-period=10097344
-[34;1m  debug: [37;0mlapic-timer: frequency=1009734400
+[34;1m  debug: [37;0mlapic-timer: ticks-per-period=10067312
+[34;1m  debug: [37;0mlapic-timer: frequency=1006731200
 [34;1m  debug: [37;0mx86: Initialising scheduler
 [34;1m  debug: [37;0mpgalloc: alloc: order=0, pgd=0xffffffff80151070 (7000)
 [34;1m  debug: [37;0mpgalloc: alloc: order=1, pgd=0xffffffff801519c0 (9c000)
@@ -456,7 +457,7 @@
 [32;1m   info: [37;0mOK!  Starting the kernel...
 [32;1mwarning: [37;0mNo RTC available to synchronise TOD
 [34;1m  debug: [37;0mpgalloc: alloc: order=0, pgd=0xffffffff801519e0 (9e000)
-[34;1m  debug: [37;0mpgalloc: alloc: order=1, pgd=0xffffffff80154520 (352000)
+[34;1m  debug: [37;0mpgalloc: alloc: order=1, pgd=0xffffffff80165f20 (14f2000)
 [34;1m  debug: [37;0mRunning scheduler
 [34;1m  debug: [37;0mEnabling interrupts
 [32;1m   info: [37;0mNow executing in the kernel thread

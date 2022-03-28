@@ -310,7 +310,7 @@ public:
     PageDescriptor **block_pointer = insert_block(pgd, order);
     PageDescriptor *buddy = buddy_of(pgd, order);
 
-    while (buddy && is_page_free(buddy, current_order)) {
+    while (buddy && is_page_free(buddy, current_order) && (current_order < MAX_ORDER - 1)) {
       block_pointer = merge_block(block_pointer, current_order);
       current_order++;
       buddy = buddy_of(*block_pointer, current_order);
