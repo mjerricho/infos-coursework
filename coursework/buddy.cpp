@@ -149,8 +149,8 @@ private:
     assert(source_order > 0);
     assert(source_order <= MAX_ORDER);
     
-    mm_log.messagef(LogLevel::DEBUG, "SPLIT_BLOCK: Splitting block, pd=%p, source order=%d", block_pointer, source_order);
-    dump_state();
+    // mm_log.messagef(LogLevel::DEBUG, "SPLIT_BLOCK: Splitting block, pd=%p, source order=%d", block_pointer, source_order);
+    // dump_state();
     int target_order = source_order - 1;
     PageDescriptor *left_block = *block_pointer;
     PageDescriptor *right_block = buddy_of(*block_pointer, target_order);
@@ -163,8 +163,8 @@ private:
     insert_block(left_block, target_order);
     insert_block(right_block, target_order);
 
-    mm_log.messagef(LogLevel::DEBUG, "SPLIT_BLOCK: Finished splitting block, pd=%p", left_block);
-    dump_state();
+    // mm_log.messagef(LogLevel::DEBUG, "SPLIT_BLOCK: Finished splitting block, pd=%p", left_block);
+    // dump_state();
     return left_block;
   }
 	
@@ -183,8 +183,8 @@ private:
     // Make sure the area_pointer is correctly aligned.
     assert(is_correct_alignment_for_order(*block_pointer, source_order));
 		
-    mm_log.messagef(LogLevel::DEBUG, "MERGE_BLOCK: Merging block, pd=%p, source order=%d", block_pointer, source_order);
-    dump_state();
+    // mm_log.messagef(LogLevel::DEBUG, "MERGE_BLOCK: Merging block, pd=%p, source order=%d", block_pointer, source_order);
+    // dump_state();
 		
     int target_order = source_order + 1;
     PageDescriptor *left_block = *block_pointer;
@@ -204,8 +204,8 @@ private:
     remove_block(right_block, source_order);
     PageDescriptor **res = insert_block(left_block, target_order);
 
-    mm_log.messagef(LogLevel::DEBUG, "MERGE_BLOCK: Finished merging block, pd=%p", left_block);
-    dump_state();
+    // mm_log.messagef(LogLevel::DEBUG, "MERGE_BLOCK: Finished merging block, pd=%p", left_block);
+    // dump_state();
     return res;
   }
 	
@@ -228,8 +228,8 @@ public:
    */
   PageDescriptor *alloc_pages(int target_order) override
   {
-    mm_log.messagef(LogLevel::DEBUG, "ALLOC_PAGES: Allocating pages at target order=%d", target_order);
-    dump_state();
+    // mm_log.messagef(LogLevel::DEBUG, "ALLOC_PAGES: Allocating pages at target order=%d", target_order);
+    // dump_state();
 
     // Making sure that the order is within acceptable range
     assert(target_order >= 0);
@@ -251,10 +251,10 @@ public:
 	    	    
       if (_free_areas[current_order]) {
 	// split larger blocks
-	mm_log.messagef(LogLevel::DEBUG, "ALLOC_PAGES: Splitting larger block at order %d", current_order);
+	// mm_log.messagef(LogLevel::DEBUG, "ALLOC_PAGES: Splitting larger block at order %d", current_order);
 	free_block = split_block(&_free_areas[current_order], current_order);
 	current_order--;
-	mm_log.messagef(LogLevel::DEBUG, "ALLOC_PAGES: Block at order %d is split", current_order);
+	// mm_log.messagef(LogLevel::DEBUG, "ALLOC_PAGES: Block at order %d is split", current_order);
       } else {
 	// get to larger blocks
 	current_order++;
@@ -262,8 +262,8 @@ public:
     }
     // remove the block from the free areas
     remove_block(free_block, target_order);
-    mm_log.messagef(LogLevel::DEBUG, "ALLOC_PAGES: Page allocated at %p order %d", free_block, target_order);
-    dump_state();
+    // mm_log.messagef(LogLevel::DEBUG, "ALLOC_PAGES: Page allocated at %p order %d", free_block, target_order);
+    // dump_state();
     return free_block;
   }
 
@@ -296,8 +296,8 @@ public:
   {
     // Make sure that the incoming page descriptor is correctly aligned
     // for the order on which it is being freed, for example, it is
-    mm_log.messagef(LogLevel::DEBUG, "FREE_PAGES: freeing page at pgd=%p, order=%d", pgd, order);
-    dump_state();
+    //  mm_log.messagef(LogLevel::DEBUG, "FREE_PAGES: freeing page at pgd=%p, order=%d", pgd, order);
+    // dump_state();
     
     // illegal to free page 1 in order-1.
     assert(is_correct_alignment_for_order(pgd, order));
@@ -315,8 +315,8 @@ public:
       current_order++;
       buddy = buddy_of(*block_pointer, current_order);
     }
-    mm_log.messagef(LogLevel::DEBUG, "FREE_PAGES: Pages freed and merged at pgd: %p order: %d", pgd, order);
-    dump_state();
+    // mm_log.messagef(LogLevel::DEBUG, "FREE_PAGES: Pages freed and merged at pgd: %p order: %d", pgd, order);
+    // dump_state();
   }
   
   /**
