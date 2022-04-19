@@ -113,8 +113,9 @@ int TarFSFile::pread(void* buffer, size_t size, off_t off)
   // start reading
   int bytes_read = 0;
   uint8_t *rbuffer = (uint8_t *) buffer; // must change name to avoid shadowing
-  uint8_t *temp = new uint8_t[_owner.block_device().block_size()];
-
+  // uint8_t *temp = new uint8_t[_owner.block_device().block_size()];
+  uint8_t temp[512];
+  
   // reading one block per time
   for (unsigned int i = curr_block; (i*512) < max_size; i++) {
     _owner.block_device().read_blocks(temp, _file_start_block + i, 1);
